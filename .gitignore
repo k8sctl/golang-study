@@ -1,0 +1,20 @@
+# --- Go build outputs ---
+*.exe
+*.dll
+*.so
+*.dylib
+
+# common build/output dirs (if you use them)
+bin/
+build/
+dist/
+out/
+
+# test/coverage
+*.test
+coverage.out
+
+# --- OS / editor ---
+.DS_Store
+.idea/
+.vscode/
