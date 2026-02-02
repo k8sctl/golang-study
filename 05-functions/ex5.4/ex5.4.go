@@ -1,0 +1,27 @@
+package main
+
+import (
+	"fmt"
+)
+
+func Divide(a, b int) (int, bool) {
+	if b == 0 {
+		return 0, false
+	}
+	return a / b, true
+}
+
+func main() {
+	// 멀티 반환 함수 예제
+	c, success := Divide(9, 3)
+	fmt.Println(c, success)
+
+	d, success := Divide(9, 0)
+	fmt.Println(d, success)
+
+	/*
+		[출력]
+		3 true
+		0 false
+	*/
+}
