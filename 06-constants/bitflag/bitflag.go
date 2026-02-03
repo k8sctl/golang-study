@@ -11,6 +11,14 @@ const (
 	SmallRoom
 )
 
+/*
+	비트플래그를 사용하지 않았다면 각 room 별로 bool 타입 변수를 따로 만들어야 해서 메모리를 많이 사용한다.
+	var IsMasterRoomLight bool
+	var IsLivingRoomLight bool
+	var IsBathRoomLight bool
+	var IsSmallRoomLight bool
+*/
+
 func SetLight(rooms, room uint8) uint8 {
 	return rooms | room // OR 연산
 }
