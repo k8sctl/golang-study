@@ -1,0 +1,18 @@
+[소괄호 활용 정리]
+
+if hasBooked() || (money > 200 && hasEmptySeat())
+
+복잡한 조건문에서는 소괄호를 사용하면
+어떤 조건을 묶어서 먼저 판단하는지가 명확해져서 가독성이 좋아진다.
+
+---
+
+쇼트 서킷(단락 평가) 과정
+1.	먼저 hasBooked() 평가
+- true이면 || 전체가 즉시 true
+- 오른쪽 (money > 200 && hasEmptySeat()) 는 평가하지 않음
+	
+2.	hasBooked()가 false일 때만 오른쪽 평가
+- money > 200 먼저 확인
+- 이 값이 false이면 && 오른쪽 hasEmptySeat()는 호출하지 않음
+- money > 200이 true일 때만 hasEmptySeat() 평가
