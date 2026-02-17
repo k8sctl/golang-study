@@ -8,7 +8,12 @@ type Data struct {
 }
 
 func changeData(arg *Data) {
-	arg.value = 999
+	// 두 표현은 같은 의미이다.
+	// (*arg).value = 999  // 포인터를 명시적으로 역참조해서 필드 접근
+	arg.value = 999 // Go가 자동 역참조해 (*arg).value로 처리
+
+	// 이것도 동일하게 자동 역참조가 적용된다.
+	// (*arg).data[100] = 999
 	arg.data[100] = 999 // 배열의 101번째 요소
 }
 
