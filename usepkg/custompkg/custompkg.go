@@ -2,6 +2,32 @@ package custompkg
 
 import "fmt"
 
+// Student: 대문자 시작 → export 됨 (패키지 외부에서 custompkg.Student로 사용 가능)
+type Student struct {
+	// Name: 대문자 시작 → export 됨 (외부에서 student.Name 접근/수정 가능)
+	Name string
+
+	// Age: 대문자 시작 → export 됨 (외부에서 student.Age 접근/수정 가능)
+	Age int
+
+	// score: 소문자 시작 → unexported (패키지 외부에서 접근/수정 불가)
+	// 같은 패키지(custompkg) 내부 코드에서만 접근 가능
+	score int
+}
+
+// Var1: 대문자 시작 → export 됨 (패키지 외부에서 custompkg.Var1로 접근 가능)
+var Var1 int
+
+// var2: 소문자 시작 → unexported (패키지 외부에서 custompkg.var2 접근 불가)
+var var2 int
+
+// PI: 대문자 시작 → export 됨 (패키지 외부에서 custompkg.PI로 접근 가능)
+const PI = 3.14
+
+// pI2: 소문자 시작 → unexported (패키지 외부에서 custompkg.pI2 접근 불가)
+const pI2 = 3.1415
+
+// PrintCustom: 대문자 시작 → export 됨
 func PrintCustom() {
 	fmt.Println("This is custom package")
 }
