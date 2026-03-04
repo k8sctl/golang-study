@@ -1,6 +1,9 @@
 package custompkg
 
-import "fmt"
+import (
+	"fmt"
+	"golang/usepkg/exinit"
+)
 
 // Student: 대문자 시작 → export 됨 (패키지 외부에서 custompkg.Student로 사용 가능)
 type Student struct {
@@ -30,6 +33,7 @@ const pI2 = 3.1415
 // PrintCustom: 대문자 시작 → export 됨
 func PrintCustom() {
 	fmt.Println("This is custom package")
+	exinit.PrintD()
 }
 
 // printCustom2는 export되지 않는(패키지 내부 전용) 함수다.

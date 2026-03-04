@@ -17,4 +17,5 @@ f() d: 5
 exinit.init function 6
 This is custom package
 d: 6
+d: 6
 */
